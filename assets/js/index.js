@@ -96,9 +96,10 @@ const postTask = () => {
     .then((res) => res.json())
     .then((result) => console.log(result))
     .then(() => getAllTasks())
+    // add catch
 }
 
-
+// ********* DELETE TASK *********
 const deleteTask = (id) => {
   const deleteObj = {
     method: 'DELETE',

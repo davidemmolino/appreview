@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 5.5.0
+notifications:
+  email: false
+before_install:
+- travis_retry nvm install 5.5.0
+- if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then npm install request; npm run update-package;
+  fi
+script:
+- if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then npm run get-test-utils && npm run
+  test ; npm run lint ; npm run report; else npm run merge; fi
