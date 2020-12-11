@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
 
 app.use((req, res) => {
   res.status(404).json('Error: not found');
+  // res.status(404).json({
+  //   status: 'fail',
+  //   message: err,
+  // })
   // another way!
   // res.sendStatus(404);
 })

@@ -10,7 +10,10 @@ router.post('/', taskController.postTask, (req, res) => {
 // Get all tasks router
 router.get('/', taskController.getTasks, (req, res) => {
   res.status(200).json(res.locals.getAllTasks);
-})
+  // res.status(200).json({
+  //   status: 'success',
+  //   data: { tasks : res.locals.getAllTasks }
+  // });
 
 // Delete tasks router
 router.delete('/:id', taskController.deleteTask, (req, res) => {
